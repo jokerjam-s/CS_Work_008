@@ -7,7 +7,7 @@
 /// Максимальное генерируемое значение для элементов массива.
 const int maxValue = 10;
 
-/// получение целочисленного значения от пользователя с консоли
+/// Получение целочисленного значения от пользователя с консоли
 ///     message - сообщение, выводимое пользователю
 int InputNum(string message)
 {
@@ -15,7 +15,7 @@ int InputNum(string message)
     return Convert.ToInt32(Console.ReadLine());
 }
 
-/// генерация матрицы.
+/// Генерация матрицы.
 ///     rowCount - количество строк в массиве
 ///     colCount - количество колонок
 int[,] GenerateMatrix(int rowCount, int colCount)
@@ -34,7 +34,7 @@ int[,] GenerateMatrix(int rowCount, int colCount)
     return array;
 }
 
-/// вывод матрицы на экран.
+/// Вывод матрицы на экран.
 ///     message - сообщение для пользователя
 ///     array - массив для печати 
 void PrintMatrix(string message, int[,] matrix)
@@ -80,7 +80,7 @@ int[,] MultiplicateMatrix(int[,] firstMatrix, int[,] secondMatrix)
     return newMatrix;
 }
 
-/// main body
+/// Main body
 Console.Clear();
 
 int firstRowsCount = InputNum("Input count rows for 1st matrix: ");
@@ -92,7 +92,7 @@ int[,] firstMatrix = GenerateMatrix(firstRowsCount, firstColsCount);
 int[,] secondMatrix = GenerateMatrix(secondRowsCount, secondColsCount);
 
 
-/// тестовые массивы для проверки, сответствие в README.MD.
+/// Тестовые массивы для проверки, сответствие в README.MD.
 /// int[,] firstMatrix = { { 1, 4, 3 }, { 2, 1, 5 }, { 3, 2, 1 } };
 /// int[,] secondMatrix = { { 5, 2, 1 }, { 4, 3, 2 }, { 2, 1, 5 } };
 

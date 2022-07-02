@@ -8,7 +8,7 @@
 /// Максимальное генерируемое значение для элементов массива.
 const int maxValue = 10;
 
-/// получение целочисленного значения от пользователя с консоли
+/// Получение целочисленного значения от пользователя с консоли.
 ///     message - сообщение, выводимое пользователю
 int InputNum(string message)
 {
@@ -16,7 +16,7 @@ int InputNum(string message)
     return Convert.ToInt32(Console.ReadLine());
 }
 
-/// генерация двумерного массива.
+/// Генерация двумерного массива.
 ///     rowCount - количество строк в массиве
 ///     colCount - количество колонок
 int[,] GenerateArray(int rowCount, int colCount)
@@ -35,7 +35,7 @@ int[,] GenerateArray(int rowCount, int colCount)
     return array;
 }
 
-/// вывод массива на экран
+/// Вывод массива на экран.
 ///     message - сообщение для пользователя
 ///     array - массив для печати 
 void PrintArray(string message, int[,] array)
@@ -51,7 +51,7 @@ void PrintArray(string message, int[,] array)
     }
 }
 
-/// сортировка строк двумерного массива по убыванию
+/// Сортировка строк двумерного массива по убыванию.
 ///     array - массив для сортировки
 void SortRowsArrayDesc(int[,] array)
 {
@@ -73,7 +73,7 @@ void SortRowsArrayDesc(int[,] array)
 }
 
 
-/// main body
+/// Main body.
 Console.Clear();
 
 int rowCount = InputNum("Input count rows in array: ");
