@@ -56,5 +56,8 @@ __*Скриншоты работы программы*__
 !["Task 62"](/ScreenShots/Task_62_1.png)
 !["Task 62"](/ScreenShots/Task_62_2.png)
 
+Вариант решения без рекурсии (Task_62_2)
+
+!["Task 62-2"](/ScreenShots/Task_62-2.png)
 
 ---
