@@ -1,4 +1,5 @@
-﻿/**
+﻿using System.Diagnostics;
+/**
 * * Задача 62
 *   Заполните спирально массив 4 на 4. Вариант решения 2
 */
@@ -37,12 +38,17 @@ PrintMatrix("Empty array: ", array);
 
 int fillValue = 1;
 
+Stopwatch stopwatch = new Stopwatch();
+
+stopwatch.Start();
+
 int rowTop = 0;
 int rowBottom = array.GetLength(0) - 1;
 int colLeft = 0;
 int colRight = array.GetLength(1) - 1;
 
-while (fillValue < array.Length)
+
+while (fillValue <= array.Length)
 {
     for (int i = colLeft; i <= colRight; i++)
     {
@@ -56,7 +62,7 @@ while (fillValue < array.Length)
     }
 
     colRight--;
-    for (int i = colRight; i >= colLeft; i--)
+    for (int i = colRight; i >= colLeft && fillValue <= array.Length; i--)
     {
         array[rowBottom, i] = fillValue++;
     }
@@ -69,4 +75,8 @@ while (fillValue < array.Length)
     colLeft++;
 }
 
+stopwatch.Stop();
+
 PrintMatrix("Fill array: ", array);
+
+Console.WriteLine("Time: " + stopwatch.Elapsed);

@@ -4,6 +4,8 @@
 *   Сокращение кол-ва циклов
 */
 
+using System.Diagnostics;
+
 /// Стартовые значения заполнения ячейки, строка, колонка
 const int startFillValue = 1;
 
@@ -36,16 +38,15 @@ void PrintMatrix(string message, int[,] matrix)
 ///     fillValue - начальное значение для заполнения
 void FillMatrix(int[,] array, int fillValue)
 {
-
     int rowTop = 0;
     int rowBottom = array.GetLength(0) - 1;
     int colLeft = 0;
     int colRight = array.GetLength(1) - 1;
     int revertValue = fillValue + (colRight - colLeft) + (rowBottom - rowTop);
 
-    while (fillValue < array.Length)
+    while (fillValue <= array.Length)
     {
-        for (int i = colLeft; i <= colRight && fillValue < array.Length; i++)
+        for (int i = colLeft; i <= colRight  && fillValue < array.Length; i++)
         {
             array[rowTop, i] = fillValue++;
             array[rowBottom, colRight - i + colLeft] = revertValue++;
@@ -54,7 +55,7 @@ void FillMatrix(int[,] array, int fillValue)
         rowTop++;
         rowBottom--;
 
-        for (int i = rowTop; i <= rowBottom && fillValue < array.Length; i++)
+        for (int i = rowTop; i <= rowBottom  && fillValue < array.Length; i++)
         {
             array[i, colRight] = fillValue++;
             array[rowBottom - i + rowTop, colLeft] = revertValue++;
@@ -77,6 +78,14 @@ int[,] array = new int[rowCount, colCount];
 
 PrintMatrix("Empty array: ", array);
 
+Stopwatch stopwatch = new Stopwatch();
+
+stopwatch.Start();
+
 FillMatrix(array, startFillValue);
 
+stopwatch.Stop();
+
 PrintMatrix("Fill array: ", array);
+
+Console.WriteLine("Time: " +  stopwatch.Elapsed);
